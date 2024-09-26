@@ -10,6 +10,7 @@ import Signin from "./Signin";
 import Signup from "./Signup";
 import Despesa from "./Despesa";
 import Receita from "./Receita";
+import DespesaForm from "./Despesa/form";
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
           </li>
           <li>
             <Link to="/despesa">Despesas</Link>
+          </li>
+          <li>
+            <Link to="/despesa-form">Criar despesa</Link>
           </li>
           <li>
             <Link to="/receita">Receitas</Link>
@@ -46,6 +50,9 @@ export default function App() {
           </Route>
           <Route path="/despesa">
             <Despesa />
+          </Route>
+          <Route path="/despesa-form">
+            <DespesaForm />
           </Route>
           <Route path="/receita">
             <Receita />
