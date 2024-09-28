@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './style.css';
 
-export default function DespesaForm() {
+export default function ReceitaForm() {
   const [formData, setFormData] = useState({
     descricao: '',
     valor: '',
@@ -17,7 +17,7 @@ export default function DespesaForm() {
     });
   };
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     const newObject = {
       descricao: formData.descricao,
@@ -26,7 +26,7 @@ export default function DespesaForm() {
       categoria: formData.categoria
     };
 
-    axios.post('http://localhost:8080/despesa', newObject)
+    axios.post('http://localhost:8080/receita', newObject)
       .then((response) => {
         console.log('Object created successfully:', response.data);
       })
@@ -37,9 +37,9 @@ export default function DespesaForm() {
 
   return (
     <div className="form-container">
-      <h2>Criar Despesa</h2>
+      <h2>Criar Receita</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div>
           <label>Descrição:</label>
           <input
           type="text"
@@ -70,7 +70,7 @@ export default function DespesaForm() {
           required
         />
       </div>
-      <div className="form-gorup">
+      <div className="form-group">
         <label>Categoria:</label>
         <input
           type="text"
@@ -80,7 +80,7 @@ export default function DespesaForm() {
           required
         />
       </div>
-      <button type="submit" className="submit-button">Criar Despesa</button>
+      <button type="submit" className="submit-button">Criar Receita</button>
     </form>
   </div>
   );

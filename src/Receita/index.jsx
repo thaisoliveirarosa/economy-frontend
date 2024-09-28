@@ -16,15 +16,31 @@ export default function Receita() {
   }, [])
 
   return (
-    <div>
-      <p>Lista de Receitas</p>
-      {
-        receitas.map(receita => (
-          <>
-            {receita.descricao} / {receita.categoria} / {receita.valor}
-            <br />
-          </>
+    <div className="table-container">
+      <h2>Lista de Receitas</h2>
+      {receitas.length > 0 ? (
+        <table>
+        <thead>
+          <tr>
+            <th>Drescrição</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+        </tr>
+       </thead>
+       <tbody>
+        {receitas.map(receita => (
+          <tr key={receita.id}>
+            <td>{receita.descricao}</td>
+            <td>{receita.categoria}</td>
+            <td>R$ {receita.valor.toFixed(2)}</td>
+          </tr>
         ))}
-    </div>
+       </tbody>
+      </table>
+    ) : (
+      <p>Carregando receitas...</p>
+    )}
+  </div>
   );
 }
+        

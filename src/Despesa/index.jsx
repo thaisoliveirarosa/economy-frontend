@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import './style.css'
+import { useEffect, useState } from 'react';
+import './style.css';
 import axios from 'axios';
 
 export default function Despesa() {
@@ -16,15 +16,30 @@ export default function Despesa() {
   }, [])
 
   return (
-    <div>
-      <p>Lista de Despesas</p>
-      {
-        despesas.map(despesa => (
-          <>
-            {despesa.descricao} / {despesa.categoria} / {despesa.valor}
-            <br />
-          </>
-        ))}
+    <div className="table-container">
+      <h2>Lista de Despesas</h2>
+      {despesas.length > 0 ? (
+        <table>
+          <thead>
+            <tr>
+              <th>Drescrição</th>
+              <th>Categoria</th>
+              <th>Valor</th>
+          </tr>
+         </thead>
+         <tbody>
+          {despesas.map(despesa => (
+            <tr key={despesa.id}>
+              <td>{despesa.descricao}</td>
+              <td>{despesa.categoria}</td>
+              <td>R$ {despesa.valor.toFixed(2)}</td>
+            </tr>
+          ))}
+         </tbody>
+        </table>
+      ) : (
+        <p>Carregando despesas...</p>
+      )}
     </div>
-  );
-}
+    );
+  }

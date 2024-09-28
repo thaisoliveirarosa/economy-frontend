@@ -11,6 +11,7 @@ import Signup from "./Signup";
 import Despesa from "./Despesa";
 import Receita from "./Receita";
 import DespesaForm from "./Despesa/form";
+import ReceitaForm from "./Receita/form";
 
 export default function App() {
   return (
@@ -18,16 +19,19 @@ export default function App() {
       <div>
         <ul>
           <li>
-            <Link to="/">Relatorios</Link>
+            <Link to="/">Relatórios</Link>
           </li>
           <li>
             <Link to="/despesa">Despesas</Link>
           </li>
           <li>
+            <Link to="/receita">Receitas</Link>
+          </li>
+          <li>
             <Link to="/despesa-form">Criar despesa</Link>
           </li>
           <li>
-            <Link to="/receita">Receitas</Link>
+            <Link to="/receita-form">Criar receita</Link>
           </li>
           <li>
             <Link to="/signin">Entrar</Link>
@@ -56,6 +60,9 @@ export default function App() {
           </Route>
           <Route path="/receita">
             <Receita />
+          </Route>
+          <Route path="/receita-form">
+            <ReceitaForm />
           </Route>
         </Switch>
       </div>
