@@ -26,9 +26,17 @@ export default function DespesaForm() {
       categoria: formData.categoria
     };
 
-    axios.post('http://localhost:8080/despesa', newObject)
+    const token = localStorage.getItem("token");
+    const axiosConfig = {
+      headers: {
+        "token": token
+      }
+    };
+
+    axios.post('http://localhost:8080/despesa', newObject, axiosConfig)
       .then((response) => {
         console.log('Object created successfully:', response.data);
+        window.location.href = "/despesa";
       })
       .catch((error) => {
         console.error('There was an error creating the object:', error);
@@ -42,46 +50,46 @@ export default function DespesaForm() {
         <div className="form-group">
           <label>Descrição:</label>
           <input
-          type="text"
-          name="descricao"
-          value={formData.descricao}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Valor:</label>
-        <input
-          type="number"
-          step="0.01"
-          name="valor"
-          value={formData.valor}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Data:</label>
-        <input
-          type="date"
-          name="data"
-          value={formData.data}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="form-gorup">
-        <label>Categoria:</label>
-        <input
-          type="text"
-          name="categoria"
-          value={formData.categoria}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <button type="submit" className="submit-button">Criar Despesa</button>
-    </form>
-  </div>
+            type="text"
+            name="descricao"
+            value={formData.descricao}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Valor:</label>
+          <input
+            type="number"
+            step="0.01"
+            name="valor"
+            value={formData.valor}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Data:</label>
+          <input
+            type="date"
+            name="data"
+            value={formData.data}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-gorup">
+          <label>Categoria:</label>
+          <input
+            type="text"
+            name="categoria"
+            value={formData.categoria}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" className="submit-button">Criar Despesa</button>
+      </form>
+    </div>
   );
 };

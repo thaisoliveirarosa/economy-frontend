@@ -7,7 +7,15 @@ export default function Receita() {
   const [receitas, setReceitas] = useState([])
 
   async function getReceitas() {
-    const response = await axios.get('http://localhost:8080/receita');
+    const token = localStorage.getItem("token");
+    const axiosConfig = {
+      headers: {
+        "token": token
+      }
+    };
+    console.log("TOKEEEN: ", token);
+
+    const response = await axios.get('http://localhost:8080/receita', axiosConfig);
     setReceitas(response.data)
   }
 
@@ -20,27 +28,26 @@ export default function Receita() {
       <h2>Lista de Receitas</h2>
       {receitas.length > 0 ? (
         <table>
-        <thead>
-          <tr>
-            <th>Drescrição</th>
-            <th>Categoria</th>
-            <th>Valor</th>
-        </tr>
-       </thead>
-       <tbody>
-        {receitas.map(receita => (
-          <tr key={receita.id}>
-            <td>{receita.descricao}</td>
-            <td>{receita.categoria}</td>
-            <td>R$ {receita.valor.toFixed(2)}</td>
-          </tr>
-        ))}
-       </tbody>
-      </table>
-    ) : (
-      <p>Carregando receitas...</p>
-    )}
-  </div>
+          <thead>
+            <tr>
+              <th>Drescrição</th>
+              <th>Categoria</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {receitas.map(receita => (
+              <tr key={receita.id}>
+                <td>{receita.descricao}</td>
+                <td>{receita.categoria}</td>
+                <td>R$ {receita.valor.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>Carregando receitas...</p>
+      )}
+    </div>
   );
 }
-        

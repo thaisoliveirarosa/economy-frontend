@@ -7,8 +7,15 @@ export default function Despesa() {
   const [despesas, setDespesas] = useState([])
 
   async function getDespesas() {
-    const response = await axios.get('http://localhost:8080/despesa');
-    setDespesas(response.data)
+    const token = localStorage.getItem("token");
+    const axiosConfig = {
+      headers: {
+        "token": token
+      }
+    };
+
+    const response = await axios.get('http://localhost:8080/despesa', axiosConfig);
+    setDespesas(response.data);
   }
 
   useEffect(() => {
