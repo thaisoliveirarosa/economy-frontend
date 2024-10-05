@@ -5,6 +5,7 @@ import axios from 'axios';
 export default function Receita() {
 
   const [receitas, setReceitas] = useState([])
+  const [total, setTotal] = useState(0)
 
   async function getReceitas() {
     const token = localStorage.getItem("token");
@@ -16,7 +17,9 @@ export default function Receita() {
     console.log("TOKEEEN: ", token);
 
     const response = await axios.get('http://localhost:8080/receita', axiosConfig);
-    setReceitas(response.data)
+    setReceitas(response.data);
+    const totalValor = response.data.reduce((acc, receita) => acc + receita.valor, 0);
+    setTotal(totalValor);
   }
 
   useEffect(() => {
@@ -27,9 +30,11 @@ export default function Receita() {
     <div className="table-container">
       <h2>Lista de Receitas</h2>
       {receitas.length > 0 ? (
+        <div>
         <table>
           <thead>
             <tr>
+              <th>Data</th>
               <th>Drescrição</th>
               <th>Categoria</th>
               <th>Valor</th>
@@ -38,6 +43,7 @@ export default function Receita() {
           <tbody>
             {receitas.map(receita => (
               <tr key={receita.id}>
+                <td>{new Date(receita.data).toLocaleDateString('pt-BR')}</td>
                 <td>{receita.descricao}</td>
                 <td>{receita.categoria}</td>
                 <td>R$ {receita.valor.toFixed(2)}</td>
@@ -45,6 +51,12 @@ export default function Receita() {
             ))}
           </tbody>
         </table>
+        <tfoot>
+        <div className="total-container">
+        <td>Total = R$ {total.toFixed(2)}</td>
+        </div>
+        </tfoot>
+        </div>
       ) : (
         <p>Carregando receitas...</p>
       )}

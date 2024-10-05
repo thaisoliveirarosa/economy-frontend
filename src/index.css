@@ -1,0 +1,22 @@
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around; /* Distribui os itens com espaço igual */
+  padding: 30px;
+  background-color: #9a3fd6; /* Cor de fundo da barra */
+  border-bottom: 1px solid #ccc; /* Borda inferior */
+  font-size: 18px;
+}
+
+.nav-list li {
+  margin: 0 60px;
+}
+
+.nav-list li a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #f9f9f9; /* Cor do link */
+}
+
+.nav-list li a:hover {
+  text-decoration: underline; /* Sublinha ao passar o mouse */
+}

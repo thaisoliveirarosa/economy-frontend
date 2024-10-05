@@ -67,6 +67,6 @@ export default function Signup() {
         required
       />
     </div>
-    <button type="submit" className="submit-button">Criar Usuario</button>
+    <button type="submit" className="submit-button">Criar Usuário</button>
   </form>
 }

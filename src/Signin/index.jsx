@@ -34,10 +34,6 @@ export default function Signin() {
       });
   };
 
-  useEffect(() => {
-    console.log("TOKEN: ", localStorage.getItem("token"));
-  }, [])
-
   return <form onSubmit={handleSubmit}>
     <div>
       <label>E-email</label>

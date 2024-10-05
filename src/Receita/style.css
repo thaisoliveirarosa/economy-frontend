@@ -49,7 +49,7 @@ input:focus {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 100px; /* Espaçamento acima do botão */
+  margin-top: 20px; /* Espaçamento acima do botão */
 }
 
 .submit-button:hover {
@@ -97,4 +97,19 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #e0e0e0;
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #f0f0f0; /* Destaque para o total */
+}
+
+.total-container {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: right;
+  color: #9a3fd6; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
