@@ -35,7 +35,7 @@ input {
 }
 
 input:focus {
-  border-color: #9a3fd6;
+  border-color: #8247c2;
   outline: none;
 }
 
@@ -43,7 +43,7 @@ input:focus {
   width: 100%;
   max-width: 300px; /* Define uma largura máxima para o botão */
   padding: 10px;
-  background-color: #9a3fd6;
+  background-color: #8247c2;
   color: white;
   border: none;
   border-radius: 4px;
@@ -53,7 +53,7 @@ input:focus {
 }
 
 .submit-button:hover {
-  background-color: #9a3fd6;
+  background-color: #8247c2;
 }
 
 
@@ -87,7 +87,7 @@ th, td {
 }
 
 th {
-  background-color: #9a3fd6;
+  background-color: #8247c2;
   color: white;
 }
 
@@ -104,11 +104,11 @@ tfoot td {
   background-color: #f0f0f0; /* Destaque para o total */
 }
 
-.total-container {
+.total-receita-container {
   margin-top: 10px;
   font-size: 16px;
   text-align: right;
-  color: #9a3fd6; 
+  color: #01a817; 
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;

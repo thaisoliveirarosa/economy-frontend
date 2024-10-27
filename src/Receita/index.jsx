@@ -14,7 +14,6 @@ export default function Receita() {
         "token": token
       }
     };
-    console.log("TOKEEEN: ", token);
 
     const response = await axios.get('http://localhost:8080/receita', axiosConfig);
     setReceitas(response.data);
@@ -35,7 +34,7 @@ export default function Receita() {
           <thead>
             <tr>
               <th>Data</th>
-              <th>Drescrição</th>
+              <th>Descrição</th>
               <th>Categoria</th>
               <th>Valor</th>
             </tr>
@@ -52,7 +51,7 @@ export default function Receita() {
           </tbody>
         </table>
         <tfoot>
-        <div className="total-container">
+        <div className="total-receita-container">
         <td>Total = R$ {total.toFixed(2)}</td>
         </div>
         </tfoot>

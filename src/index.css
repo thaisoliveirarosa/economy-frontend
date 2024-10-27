@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around; /* Distribui os itens com espaço igual */
   padding: 30px;
-  background-color: #9a3fd6; /* Cor de fundo da barra */
+  background-color: #8247c2; /* Cor de fundo da barra */
   border-bottom: 1px solid #ccc; /* Borda inferior */
   font-size: 18px;
 }

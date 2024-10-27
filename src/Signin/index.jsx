@@ -36,7 +36,7 @@ export default function Signin() {
 
   return <form onSubmit={handleSubmit}>
     <div>
-      <label>E-email</label>
+      <label>E-mail</label>
       <input
         type="text"
         name="email"

@@ -34,7 +34,7 @@ export default function Despesa() {
           <thead>
             <tr>
               <th>Data</th>
-              <th>Drescrição</th>
+              <th>Descrição</th>
               <th>Categoria</th>
               <th>Valor</th>
           </tr>
@@ -51,7 +51,7 @@ export default function Despesa() {
          </tbody>
         </table>
         <tfoot>
-        <div className="total-container">
+        <div className="total-despesa-container">
         <td>Total = R$ {total.toFixed(2)}</td>
         </div>
         </tfoot>

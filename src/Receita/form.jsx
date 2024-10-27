@@ -47,7 +47,7 @@ export default function ReceitaForm() {
     <div className="form-container">
       <h2>Criar Receita</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label>Descrição:</label>
           <input
           type="text"

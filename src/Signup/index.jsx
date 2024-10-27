@@ -48,7 +48,7 @@ export default function Signup() {
       />
     </div>
     <div>
-      <label>E-email</label>
+      <label>E-mail</label>
       <input
         type="text"
         name="email"

@@ -78,7 +78,7 @@ export default function DespesaForm() {
             required
           />
         </div>
-        <div className="form-gorup">
+        <div className="form-group">
           <label>Categoria:</label>
           <input
             type="text"
